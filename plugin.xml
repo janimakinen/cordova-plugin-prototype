@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="cordova-plugin-prototype" version="0.0.1">
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="cordova-plugin-prototype" version="0.0.1">
     <name>CordovaPluginPrototype</name>
     <description>Cordova Plugin Prototype</description>
-    <license>Apache 2.0</license>
+    <license>MIT</license>
     <keywords>cordova,plugin,prototype</keywords>
     <js-module src="www/testprototype.js" name="testPrototype">
         <clobbers target="testprototype" />
     </js-module>
+    <platform name="android">
+        <config-file target="config.xml" parent="/*">
+            <feature name="TestPrototype">
+                <param name="android-package" value="com.cordovapluginprototype.TestPrototype"/>
+            </feature>
+        </config-file>
+        <source-file src="src/android/TestPrototype.java" target-dir="src/com/cordovapluginprototype" />
+    </platform>
 </plugin>
